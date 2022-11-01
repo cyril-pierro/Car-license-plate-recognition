@@ -1,0 +1,10 @@
+version: '3.9'
+services:
+  app:
+    container_name: mycontainer1
+    build: .
+    environment:
+      - DATABASE_URL=sqlite:///./sql_app.db
+      - APP_SECRET_KEY=ajkfdjakdfjalkf
+    ports:
+      - "${PORT:-8000}:${PORT:-8000}"

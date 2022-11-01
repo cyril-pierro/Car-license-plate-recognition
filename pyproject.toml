@@ -1,0 +1,56 @@
+[tool.poetry]
+name = "car-tracker"
+version = "0.1.0"
+description = ""
+authors = ["Cyril Pierro <fiopapa32@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+fastapi = "^0.85.0"
+uvicorn = "^0.18.3"
+python-multipart = "^0.0.5"
+easyocr = "^1.6.2"
+imutils = "^0.5.4"
+opencv-python = "4.5.5.64"
+python-dotenv = "^0.21.0"
+SQLAlchemy = "^1.4.41"
+opencv-python-headless = "4.5.4.60"
+
+
+[tool.poetry.group.dev.dependencies]
+flake8 = "^5.0.4"
+black = "^22.8.0"
+isort = "^5.10.1"
+mypy = "^0.971"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+
+[tool.isort]
+profile = "black"
+
+[tool.mypy]
+# unfortunately cannot inject dependencies into super-linter
+# so we have to ignore the imports as they will not have typehints
+ignore_missing_imports = true
+
+warn_unused_configs = true
+disallow_any_generics = true
+# disallow_subclassing_any = true
+disallow_untyped_calls = true
+disallow_untyped_defs = true
+disallow_incomplete_defs = true
+check_untyped_defs = true
+# disallow_untyped_decorators = true
+no_implicit_optional = true
+warn_redundant_casts = true
+warn_unused_ignores = true
+warn_return_any = true
+no_implicit_reexport = true
+strict_equality = true
+
+[tool.black]
+experimental-string-processing = true
+
